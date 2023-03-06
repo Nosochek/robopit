@@ -57,7 +57,7 @@ class ServoCtrl(threading.Thread):
 		self.ctrlRangeMax = 560
 		self.ctrlRangeMin = 100
 		self.angleRange = 180
-		print('RPiServo init, pithushara')
+		print('RPiServo init, updated pitushara')
 		'''  
 		scMode: 'init' 'auto' 'certain' 'quick' 'wiggle'
 		'''
