@@ -19,13 +19,13 @@ Motor_A_Pin2  = 15
 Motor_B_Pin1  = 27
 Motor_B_Pin2  = 18
 
-Dir_forward   = 0 # changing forward and backward direction
-Dir_backward  = 1
+Dir_forward   = 1 # changing forward and backward direction
+Dir_backward  = 0
 
-left_forward  = 0 # changing forward left and backward left direction
+left_forward  = 0
 left_backward = 1
 
-right_forward = 0 # changing forward right and backward right direction
+right_forward = 0
 right_backward= 1
 
 pwn_A = 0
@@ -66,13 +66,13 @@ def motor_left(status, direction, speed):#Motor 2 positive and negative rotation
 		GPIO.output(Motor_B_EN, GPIO.LOW)
 	else:
 		if direction == Dir_backward:
-			GPIO.output(Motor_B_Pin1, GPIO.HIGH)
-			GPIO.output(Motor_B_Pin2, GPIO.LOW)
+			GPIO.output(Motor_B_Pin1, GPIO.LOW)
+			GPIO.output(Motor_B_Pin2, GPIO.HIGH)
 			pwm_B.start(100)
 			pwm_B.ChangeDutyCycle(speed)
 		elif direction == Dir_forward:
-			GPIO.output(Motor_B_Pin1, GPIO.LOW)
-			GPIO.output(Motor_B_Pin2, GPIO.HIGH)
+			GPIO.output(Motor_B_Pin1, GPIO.HIGH)
+			GPIO.output(Motor_B_Pin2, GPIO.LOW)
 			pwm_B.start(0)
 			pwm_B.ChangeDutyCycle(speed)
 
@@ -84,13 +84,13 @@ def motor_right(status, direction, speed):#Motor 1 positive and negative rotatio
 		GPIO.output(Motor_A_EN, GPIO.LOW)
 	else:
 		if direction == Dir_forward:#
-			GPIO.output(Motor_A_Pin1, GPIO.HIGH)
-			GPIO.output(Motor_A_Pin2, GPIO.LOW)
+			GPIO.output(Motor_A_Pin1, GPIO.LOW)
+			GPIO.output(Motor_A_Pin2, GPIO.HIGH)
 			pwm_A.start(100)
 			pwm_A.ChangeDutyCycle(speed)
 		elif direction == Dir_backward:
-			GPIO.output(Motor_A_Pin1, GPIO.LOW)
-			GPIO.output(Motor_A_Pin2, GPIO.HIGH)
+			GPIO.output(Motor_A_Pin1, GPIO.HIGH)
+			GPIO.output(Motor_A_Pin2, GPIO.LOW)
 			pwm_A.start(0)
 			pwm_A.ChangeDutyCycle(speed)
 	return direction
