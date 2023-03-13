@@ -25,7 +25,7 @@ Dir_backward  = 0
 left_forward  = 0 # changing forward left and backward left direction
 left_backward = 1
 
-right_forward = 0 # changing forward right and backward right direction
+right_forward = 1 # changing forward right and backward right direction
 right_backward= 1
 
 pwn_A = 0
